@@ -12,6 +12,8 @@ services:
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
+    networks:
+      - db-provision
     volumes:
       - wordpress:/var/www/html
 
@@ -29,3 +31,6 @@ services:
 volumes:
   wordpress:
   db:
+
+networks:
+  db-provision:
